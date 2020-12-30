@@ -1,4 +1,4 @@
-# docker_radarr <a href='https://github.com/padhi-homelab/docker_radarr/actions?query=workflow%3A%22Docker+CI+Release+%28Latest%29%22'><img align='right' src='https://img.shields.io/github/workflow/status/padhi-homelab/docker_radarr/Docker%20CI%20Release%20(Latest)?logo=github&logoWidth=24&style=flat-square'></img></a>
+# docker_radarr <a href='https://github.com/padhi-homelab/docker_radarr/actions?query=workflow%3A%22Docker+CI+Release%22'><img align='right' src='https://img.shields.io/github/workflow/status/padhi-homelab/docker_radarr/Docker%20CI%20Release?logo=github&logoWidth=24&style=flat-square'></img></a>
 
 <a href='https://microbadger.com/images/padhihomelab/radarr'><img src='https://img.shields.io/microbadger/layers/padhihomelab/radarr/latest?logo=docker&logoWidth=24&style=for-the-badge'></img></a>
 <a href='https://hub.docker.com/r/padhihomelab/radarr'><img src='https://img.shields.io/docker/image-size/padhihomelab/radarr/latest?label=size%20%5Blatest%5D&logo=docker&logoWidth=24&style=for-the-badge'></img></a>
