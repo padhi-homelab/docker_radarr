@@ -22,6 +22,7 @@ RUN chmod +x /etc/docker-entrypoint.d/setup-volume.sh \
  && apk add --no-cache --update \
             icu-libs \
             libintl \
+            libmediainfo \
             sqlite-libs \
             tzdata \
  && cd /tmp \
