@@ -1,4 +1,4 @@
-FROM padhihomelab/alpine-base:3.13_0.19.0_0.2 as base
+FROM padhihomelab/alpine-base:3.13.5_0.19.0_0.2 as base
 ARG TARGETARCH
 
 FROM base AS base-amd64
@@ -9,7 +9,7 @@ ENV RADARR_ARCH=arm64
 
 FROM base-${TARGETARCH}${TARGETVARIANT}
 
-ARG RADARR_VERSION=3.0.2.4552
+ARG RADARR_VERSION=3.1.1.4954
 
 ADD "https://github.com/Radarr/Radarr/releases/download/v${RADARR_VERSION}/Radarr.master.${RADARR_VERSION}.linux-musl-core-${RADARR_ARCH}.tar.gz" \
     /tmp/radarr.tar.gz
