@@ -1,4 +1,4 @@
-FROM padhihomelab/alpine-base:3.13.5_0.19.0_0.2 as base
+FROM padhihomelab/alpine-base:3.15.0_0.19.0_0.2 as base
 ARG TARGETARCH
 
 FROM base AS base-amd64
@@ -9,15 +9,17 @@ ENV RADARR_ARCH=arm64
 
 FROM base-${TARGETARCH}${TARGETVARIANT}
 
-ARG RADARR_VERSION=3.2.2.5080
+ARG RADARR_VERSION=4.0.2.5836
 
-ADD "https://github.com/Radarr/Radarr/releases/download/v${RADARR_VERSION}/Radarr.master.${RADARR_VERSION}.linux-musl-core-${RADARR_ARCH}.tar.gz" \
+ADD "https://github.com/Radarr/Radarr/releases/download/v${RADARR_VERSION}/Radarr.develop.${RADARR_VERSION}.linux-musl-core-${RADARR_ARCH}.tar.gz" \
     /tmp/radarr.tar.gz
 
-COPY radarr.sh       /usr/local/bin/radarr
-COPY setup-volume.sh /etc/docker-entrypoint.d/setup-volume.sh
+COPY radarr.sh \
+     /usr/local/bin/radarr
+COPY entrypoint-scripts \
+     /etc/docker-entrypoint.d/99-extra-scripts
 
-RUN chmod +x /etc/docker-entrypoint.d/setup-volume.sh \
+RUN chmod +x /etc/docker-entrypoint.d/99-extra-scripts/*.sh \
              /usr/local/bin/radarr \
  && apk add --no-cache --update \
             icu-libs \
