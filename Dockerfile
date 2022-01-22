@@ -9,7 +9,7 @@ ENV RADARR_ARCH=arm64
 
 FROM base-${TARGETARCH}${TARGETVARIANT}
 
-ARG RADARR_VERSION=4.0.2.5836
+ARG RADARR_VERSION=4.0.3.5879
 
 ADD "https://github.com/Radarr/Radarr/releases/download/v${RADARR_VERSION}/Radarr.develop.${RADARR_VERSION}.linux-musl-core-${RADARR_ARCH}.tar.gz" \
     /tmp/radarr.tar.gz
