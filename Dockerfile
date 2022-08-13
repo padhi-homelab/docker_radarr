@@ -1,4 +1,4 @@
-FROM padhihomelab/alpine-base:3.16.1_0.19.0_0.2 as base
+FROM padhihomelab/alpine-base:3.16.2_0.19.0_0.2 as base
 ARG TARGETARCH
 
 FROM base AS base-amd64
@@ -12,7 +12,7 @@ ENV RADARR_ARCH=arm
 
 FROM base-${TARGETARCH}${TARGETVARIANT}
 
-ARG RADARR_VERSION=4.2.0.6438
+ARG RADARR_VERSION=4.2.1.6478
 ARG RADARR_BRANCH=develop
 
 ADD "https://github.com/Radarr/Radarr/releases/download/v${RADARR_VERSION}/Radarr.${RADARR_BRANCH}.${RADARR_VERSION}.linux-musl-core-${RADARR_ARCH}.tar.gz" \
@@ -42,5 +42,5 @@ VOLUME [ "/config", "/downloads", "/movies" ]
 
 CMD [ "radarr" ]
 
-HEALTHCHECK --start-period=10s --interval=30s --timeout=5s --retries=3 \
-        CMD ["wget", "--tries", "5", "-qSO", "/dev/null",  "http://localhost:7878/"]
+HEALTHCHECK --start-period=10s --interval=30s --timeout=5s \
+        CMD ["wget", "--tries", "5", "-qSO", "/dev/null",  "http://127.0.0.1:7878/"]
