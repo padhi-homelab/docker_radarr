@@ -35,7 +35,7 @@ Runs Radarr with WebUI served on port 7878.
 <br>
 To run it in background, use the `--detach` flag.
 
-Usage with [Docker Compose] is similarly straightforward.
+Usage with [`docker compose`][docker compose] is similarly straightforward.
 <br>
 As an example, you can see my configuration in [services/monitarr].
 
